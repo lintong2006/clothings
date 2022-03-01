@@ -11,6 +11,7 @@ import SignInAndSignUpPage from './pages/sign-in-sign-up/sign-in-sign-up.compone
 import Header from './components/header/header.component';
 import { auth } from './firebase/firebase.utils';
 
+
 class App extends React.Component {
   constructor() {
     super();
@@ -23,8 +24,7 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = 
-    auth.onAuthStateChanged(user => {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
       this.setState({ currentUser: user });
 
       console.log(user);
